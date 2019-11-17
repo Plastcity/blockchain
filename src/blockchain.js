@@ -16,11 +16,6 @@ class Transaction {
     this.timestamp = Date.now();
   }
 
-  /**
-   * Creates a SHA256 hash of the transaction
-   *
-   * @returns {string}
-   */
   calculateHash() {
     return crypto.createHash('sha256').update(this.fromAddress + this.toAddress + this.amount + this.timestamp).digest('hex');
   }
